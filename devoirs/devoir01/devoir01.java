@@ -4,7 +4,7 @@ public class devoir01 {
     public static void main(String[] args) {
         int monAge = 30;
         boolean estMajeur;
-
+ 
         if (monAge >= 20) {
             estMajeur = true;
             
