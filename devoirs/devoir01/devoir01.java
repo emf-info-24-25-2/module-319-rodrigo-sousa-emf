@@ -6,7 +6,7 @@ public class devoir01 {
         boolean estMajeur;
  
         if (monAge >= 20) {
-            estMajeur = true;
+            estMajeur = true; 
             
         }else {estMajeur = false;}
 
