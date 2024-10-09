@@ -10,7 +10,7 @@ public class devoir04 {
         System.out.println("La date entrés est le " + jour + "." + mois+ "." + year);
         if (year<=9999 || year >= 0) {
             
-        
+         
         switch (mois) {
             case 1:
               
