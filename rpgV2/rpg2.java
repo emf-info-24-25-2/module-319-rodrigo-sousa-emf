@@ -369,7 +369,7 @@ public class rpg2 {
                     System.out.println("Choose an option");
                     break;
             }
-
+ 
         }
     }
 }
