@@ -1,4 +1,7 @@
 package rpgV2;
+
+import java.util.Scanner;
+import rpgV2.mob.david;
 import rpgV2.mob.luca;
 import rpgV2.mob.player;
 
@@ -7,20 +10,19 @@ public class rpg2 {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
-  
+
     // Si le joueur est en vie
     public static boolean alive = true;
-    player Player = new player(5, 100, 100, 500);
+    static player Player = new player(5, 100, 100, 500);
 
     public static void main(String[] args) throws InterruptedException {
-           
-            System.out.println("Test");
-            /*
-              
-             while (alive == true) {
-               */ luca Luca = new luca(15, 30, 100, 50);
-            /* 
-            int MAXHP = player[1];
+
+        while (alive == true) {
+            luca Luca = new luca(15, 30, 100, 50);
+            david David = new david(5, 100, 100, 75);
+
+            int MAXHP = Player.getHP();
+
             int Boost = 0;
             boolean fight = true;
             boolean shop = true;
@@ -46,81 +48,86 @@ public class rpg2 {
                         int output = choix.nextInt();
                         switch (output) {
                             case 1:
-                                david[1] = david[1] - player[0];
-                                System.out.println("David " + "Attack : " + david[0] + " HP : " + david[1]);
+                                David.setHP(David.getHP() - Player.getAttack());
+                                System.out.println("David " + "Attack : " + David.getAttack() + " HP : " + David.getHP());
 
                                 break;
                             case 2:
-                            if (player[1] + MAXHP/2 > MAXHP) {
-                              player[1] = MAXHP;
-                        
-                            }else{
-                            player[1] = player[1] + MAXHP/2;
-                          }
-                            System.out.println("You have used a healing potion you now have " + player[1] + "HP");
-                            Thread.sleep(1000);
-                            break;
+                                if (Player.getHP() + MAXHP / 2 > MAXHP) {
+                                    Player.setHP(MAXHP);
+
+                                } else {
+                                    Player.setHP(Player.getHP() + MAXHP / 2);
+                                }
+                                System.out.println("You have used a healing potion you now have " + Player.getHP() + "HP");
+                                Thread.sleep(1000);
+                                break;
 
                             case 3:
-                            System.out.println("1 Fireball 20MP 60 Damage");
-                            Thread.sleep(500);
-                            System.out.println("2 Magic missile 10MP 20 Damage");
-                            Thread.sleep(500);
-                            System.out.println("3 Boost 50Mp 2X damage for 3 turns");
-                            Thread.sleep(500);
-                            System.out.println("4 Vicious Mockery 100MP 500 Damage");
-                            Thread.sleep(500);
-                            System.out.println("Which spell are you using");
-                            Scanner magic = new Scanner(System.in); // Create a Scanner object
-                            int magicChoice = magic.nextInt();
-                            switch (magicChoice) {
-                                case 1 :
-                                if (Boost > 0) {
-                                  if (player[2] - 20 >= 0) {
-                                    System.out.println("You used Dai Henkai: Entei");
-                                    david[1] = david[1] -120;
-                                }}else if (player[2] - 20 >= 0) {
-                                      System.out.println("You used Fireball");
-                                      david[1] = david[1] -60;
-                                    }
-                                    break;
-                                    case 2 :
-                                    if (Boost > 0) {
-                                      if (player[2] - 20 >= 0) {
-                                        System.out.println("You used ");
-                                        david[1] = david[1] -40;
-                                    }}else if (player[2] - 20 >= 0) {
-                                          System.out.println("You used Magic Missile");
-                                          david[1] = david[1] -20;
+                                System.out.println("1 Fireball 20MP 60 Damage");
+                                Thread.sleep(500);
+                                System.out.println("2 Magic missile 10MP 20 Damage");
+                                Thread.sleep(500);
+                                System.out.println("3 Boost 50Mp 2X damage for 3 turns");
+                                Thread.sleep(500);
+                                System.out.println("4 Vicious Mockery 100MP 500 Damage");
+                                Thread.sleep(500);
+                                System.out.println("Which spell are you using");
+                                Scanner magic = new Scanner(System.in); // Create a Scanner object
+                                int magicChoice = magic.nextInt();
+                                switch (magicChoice) {
+                                    case 1:
+                                        if (Boost > 0) {
+                                            if (Player.getMana() - 20 >= 0) {
+                                                System.out.println("You used Dai Henkai: Entei");
+                                                David.setHP(David.getHP() - 120);
+                                            }
+                                        } else if (Player.getMana() - 20 >= 0) {
+                                            System.out.println("You used Fireball");
+                                            David.setHP(David.getHP() - 60);
                                         }
-                                    break;
-                                    case 3 :
-                                    if (Boost > 0) {
-                        
-                                    if (player[2] - 20 >= 0) {
-                                          System.out.println("You used Boost");
-                                          Boost = 3;
-                                        }}
-                                    break;
-                                    case 4 :
-                                    if (Boost > 0) {
-                                      if (player[2] - 100 >= 0) {
-                                        System.out.println("You used You'r life story");
-                                        david[1] = david[1] -40;
-                                    }}else if (player[2] - 100 >= 0) {
-                                          System.out.println("You used Vicious Mockerie");
-                                          david[1] = david[1] -20;
+                                        break;
+                                    case 2:
+                                        if (Boost > 0) {
+                                            if (Player.getMana() - 20 >= 0) {
+                                                System.out.println("You used ");
+                                                David.setHP(David.getHP() - 40);
+                                            }
+                                        } else if (Player.getMana() - 20 >= 0) {
+                                            System.out.println("You used Magic Missile");
+                                            David.setHP(David.getHP() - 20);
                                         }
-                                    break;
-                                default:
-                                    
-                            
-                                break;
-                          }
+                                        break;
+                                    case 3:
+                                        if (Boost > 0) {
+
+                                            if (Player.getMana() - 20 >= 0) {
+                                                System.out.println("You used Magic Boost");
+                                                Boost = 3;
+                                            }
+                                        } else {
+                                            System.out.println("Magic Boost is already activated");
+                                        }
+                                        break;
+                                    case 4:
+                                        if (Boost > 0) {
+                                            if (Player.getMana() - 100 >= 0) {
+                                                System.out.println("You used You'r life story");
+                                                David.setHP(David.getHP() - 1000);
+                                            }
+                                        } else if (Player.getMana() - 100 >= 0) {
+                                            System.out.println("You used Vicious Mockerie");
+                                            David.setHP(David.getHP() - 500);
+                                        }
+                                        break;
+                                    default:
+
+                                        break;
+                                }
                             case 4:
                                 System.out.println("You ran away");
                                 fight = false;
-                                player[1] = MAXHP;
+                                Player.setHP(MAXHP);
                                 break;
 
                             default:
@@ -128,19 +135,19 @@ public class rpg2 {
                                 break;
 
                         }
-                        if (david[1] <= 0) {
-                            System.out.println("you win" + " + " + david[3] + "gold");
-                            player[3] = player[3] + david[3];
-                            System.out.println("You have " + player[3] + "gold");
+                        if (David.getHP() <= 0) {
+                            System.out.println("you win" + " + " + David.getGold() + "gold");
+                            Player.setGold(Player.getGold() + David.getGold());
+                            System.out.println("You have " + Player.getGold() + "gold");
                             fight = false;
-                            player[1] = MAXHP;
+                            Player.setHP(MAXHP);
                             Thread.sleep(2000);
                             break;
-                        }else{
-                          System.out.println("David Attacked");
-                          player[1] = player[1] -david[0];
-                          System.out.println("You have lost " + david[0] + "HP you now have " + player[1] + "HP");
-                        Thread.sleep(500);
+                        } else {
+                            System.out.println("David Attacked");
+                            Player.setHP(Player.getHP() - David.getAttack());
+                            System.out.println("You have lost " + David.getAttack() + "HP you now have " + Player.getHP() + "HP");
+                            Thread.sleep(500);
                         }
                     }
 
@@ -211,135 +218,135 @@ public class rpg2 {
 
                         switch (buy) {
                             case 1:
-                                if (player[3] - 1250 < 0) {
+                                if (Player.getGold() - 1250 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 50;
+                                    Player.setHP(Player.getHP() + 50);
                                 }
                                 break;
                             case 2:
-                                if (player[3] - 1000 < 0) {
+                                if (Player.getGold() - 1000 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 5;
+                                    Player.setAttack(Player.getAttack() + 5);
                                 }
                                 break;
                             case 3:
-                                if (player[3] - 2080 < 0) {
+                                if (Player.getGold() - 2080 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 100;
+                                    Player.setHP(Player.getHP() + 100);
                                 }
                                 break;
                             case 4:
-                                if (player[3] - 1664 < 0) {
+                                if (Player.getGold() - 1664 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 10;
+                                    Player.setAttack(Player.getAttack() + 10);
                                 }
                                 break;
                             case 5:
-                                if (player[3] - 3322 < 0) {
+                                if (Player.getGold() - 3322 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 125;
+                                    Player.setHP(Player.getHP() + 125);
                                 }
                                 break;
                             case 6:
-                                if (player[3] - 2657 < 0) {
+                                if (Player.getGold() - 2657 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 15;
+                                    Player.setAttack(Player.getAttack()+15);
                                 }
                                 break;
                             case 7:
-                                if (player[3] - 5314 < 0) {
+                                if (Player.getGold() - 5314 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 150;
+                                    Player.setHP(Player.getHP()+150);
                                 }
                                 break;
                             case 8:
-                                if (player[3] - 4251 < 0) {
+                                if (Player.getGold() - 4251 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 20;
+                                    Player.setAttack(Player.getAttack()+ 20);
                                 }
                                 break;
                             case 9:
-                                if (player[3] - 8502 < 0) {
+                                if (Player.getGold() - 8502 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 175;
+                                    Player.setHP(Player.getHP() + 175);
                                 }
                                 break;
                             case 10:
-                                if (player[3] - 6801 < 0) {
+                                if (Player.getGold() - 6801 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 25;
+                                    Player.setAttack(Player.getAttack() +25);
                                 }
                                 break;
                             case 11:
-                                if (player[3] - 13603 < 0) {
+                                if (Player.getGold() - 13603 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 200;
+                                    Player.setHP(Player.getHP() + 200);
                                 }
                                 break;
                             case 12:
-                                if (player[3] - 10882 < 0) {
+                                if (Player.getGold() - 10882 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 30;
+                                    Player.setAttack(Player.getAttack() + 30);
                                 }
                                 break;
                             case 13:
-                                if (player[3] - 21766 < 0) {
+                                if (Player.getGold() - 21766 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 225;
+                                    Player.setHP(Player.getHP() + 225);
                                 }
                                 break;
                             case 14:
-                                if (player[3] - 17413 < 0) {
+                                if (Player.getGold() - 17413 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 35;
+                                    Player.setAttack(Player.getAttack()+35);
                                 }
                                 break;
                             case 15:
-                                if (player[3] - 34826 < 0) {
+                                if (Player.getGold() - 34826 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 250;
+                                    Player.setHP(Player.getHP() +  250);
                                 }
                                 break;
                             case 16:
-                                if (player[3] - 27860 < 0) {
+                                if (Player.getGold() - 27860 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 40;
+                                    Player.setAttack(Player.getAttack()+40);
                                 }
                                 break;
                             case 17:
-                                if (player[3] - 55721 < 0) {
+                                if (Player.getGold() - 55721 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[1] = player[1] + 275;
+                                    Player.setHP(Player.getHP() + 275);
                                 }
                                 break;
                             case 18:
-                                if (player[3] - 44577 < 0) {
+                                if (Player.getGold() - 44577 < 0) {
                                     System.out.println("Too poor to buy it");
                                 } else {
-                                    player[0] = player[0] + 45;
+                                    Player.setAttack(Player.getAttack()+45);
                                 }
                                 break;
                             case 19:
                                 System.out.println("Bye");
                                 shop = false;
-                                MAXHP = player[1];
+                                MAXHP = Player.getHP();
                                 break;
 
                             default:
@@ -363,7 +370,6 @@ public class rpg2 {
                     break;
             }
 
-        }*/
+        }
     }
 }
-

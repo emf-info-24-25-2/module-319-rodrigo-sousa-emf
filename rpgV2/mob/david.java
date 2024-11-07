@@ -1,15 +1,16 @@
 package rpgV2.mob;
-
 public class david {
     private int attack;
     private int HP; 
     private int mana; 
     private int gold;
-    public void david(int attack, int HP, int mana, int gold){
-        this.attack = 1;
-        this.HP = 200;
+    
+    // attack,hp,mana,gold
+    public david (int attack, int HP, int mana, int gold){
+        this.attack = 100;
+        this.HP = 100;
         this.mana = 100;
-        this.gold = 75;
+        this.gold = 500;
 
     }
     public int getAttack() {
