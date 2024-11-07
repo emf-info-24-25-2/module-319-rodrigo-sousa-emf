@@ -1,27 +1,25 @@
-import java.util.Scanner;
+package rpgV2;
+import rpgV2.mob.luca;
+import rpgV2.mob.player;
 
-public class rpg {
+public class rpg2 {
 
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
-
-    // attack,hp,mana,gold
-    public static int[] player = new int[]{1, 100, 100, 500};
-    // attack,hp,mana,gold lootable
-    public static int[] luca = new int[]{5, 20, 100, 50};
-    // attack,hp,mana,gold lootable
-    public static int[] melvin = new int[]{8, 30, 100, 50};
-    // attack,hp,mana,gold lootable
-    public static int[] david = new int[]{1, 200, 100, 75};
-    // attack,hp,mana,gold lootable
-    public static int[] bartosz = new int[]{4, 1, 100, 50};
+  
     // Si le joueur est en vie
     public static boolean alive = true;
+    player Player = new player(5, 100, 100, 500);
 
     public static void main(String[] args) throws InterruptedException {
-
-        while (alive == true) {
+           
+            System.out.println("Test");
+            /*
+              
+             while (alive == true) {
+               */ luca Luca = new luca(15, 30, 100, 50);
+            /* 
             int MAXHP = player[1];
             int Boost = 0;
             boolean fight = true;
@@ -365,6 +363,7 @@ public class rpg {
                     break;
             }
 
-        }
+        }*/
     }
 }
+
