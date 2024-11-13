@@ -15,7 +15,10 @@ public class devoir6 {
     }
 
     public static void main(String[] args) {
+        //RIF: vous pourriez utilisé la constante que vous avez définie en haut
         int nbre_cher = 7;
+        //RIF: attention a donner des noms de variables avec des minuscules -> tableau
+        //RIF: de même dans les paramètres des méthodes
         int[] Tableau = genereTableau(VALEUR_MIN, VALEUR_MAX, TAILLE_TABLEAU);
         for (int i = 0; i < Tableau.length; i++) {
             System.out.println("Tableau[" + i + "] " + "= [" + Tableau[i] + "]");
@@ -28,6 +31,7 @@ public class devoir6 {
     }
 
     public static int rechercheMin(int[] Tableau) {
+        //RIF: il vaut mieux utiliser la constante ou la première case du tableau pour garantir la compatibilité de votre méthode quand on change les constantes
         int valMin = 50;
         for (int i = 0; i < Tableau.length; i++) {
             if (Tableau[i] < valMin) {
