@@ -41,12 +41,12 @@ public class devoir05 {
                 System.out.println("Bravo, trouvé!");
 
                 System.out.println("Nombre de tentatives: " + numGuesses);
-
+            
             }
 
         }
 
-   
+   //RIF: Pensez à fermer le scanner
 
 }
 
