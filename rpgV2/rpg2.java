@@ -1,9 +1,8 @@
 package rpgV2;
 
 import java.util.Scanner;
-import rpgV2.mob.david;
-import rpgV2.mob.luca;
-import rpgV2.mob.player;
+import rpgV2.mob.Character;
+
 
 public class rpg2 {
 
@@ -13,13 +12,13 @@ public class rpg2 {
 
     // Si le joueur est en vie
     public static boolean alive = true;
-    static player Player = new player(5, 100, 100, 500);
+    static Character Player = new Character(5, 100, 100, 500);
 
     public static void main(String[] args) throws InterruptedException {
 
         while (alive == true) {
-            luca Luca = new luca(15, 30, 100, 50);
-            david David = new david(5, 100, 100, 75);
+            Character Luca = new Character(15, 30, 100, 50);
+            Character David = new Character(5, 100, 100, 75);
 
             int MAXHP = Player.getHP();
 
@@ -89,11 +88,11 @@ public class rpg2 {
                                         break;
                                     case 2:
                                         if (Boost > 0) {
-                                            if (Player.getMana() - 20 >= 0) {
+                                            if (Player.getMana() - 10 >= 0) {
                                                 System.out.println("You used ");
                                                 David.setHP(David.getHP() - 40);
                                             }
-                                        } else if (Player.getMana() - 20 >= 0) {
+                                        } else if (Player.getMana() - 10 >= 0) {
                                             System.out.println("You used Magic Missile");
                                             David.setHP(David.getHP() - 20);
                                         }
@@ -101,7 +100,7 @@ public class rpg2 {
                                     case 3:
                                         if (Boost > 0) {
 
-                                            if (Player.getMana() - 20 >= 0) {
+                                            if (Player.getMana() - 50 >= 0) {
                                                 System.out.println("You used Magic Boost");
                                                 Boost = 3;
                                             }
