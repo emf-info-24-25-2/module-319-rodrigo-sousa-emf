@@ -9,7 +9,7 @@ public class rpg {
     public static final String ANSI_GREEN = "\u001B[32m";
 
     // attack,hp,mana,gold
-    public static int[] player = new int[]{4, 100, 100, 500000};
+    public static int[] player = new int[]{4, 100, 100, 500};
     // attack,hp,mana,gold lootable
     public static int[] luca = new int[]{10, 100, 100, 200};
     // attack,hp,mana,gold lootable
