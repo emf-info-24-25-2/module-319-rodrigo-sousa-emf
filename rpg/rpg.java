@@ -9,11 +9,11 @@ public class rpg {
     public static final String ANSI_GREEN = "\u001B[32m";
 
     // attack,hp,mana,gold
-    public static int[] player = new int[]{4, 100, 100, 500000};
+    public static int[] player = new int[]{4, 100, 100, 500};
     // attack,hp,mana,gold lootable
     public static int[] luca = new int[]{10, 100, 100, 200};
     // attack,hp,mana,gold lootable
-    public static int[] melvin = new int[]{16, 300, 100, 350};
+    public static int[] melvin = new int[]{16, 300, 100, 550};
     // attack,hp,mana,gold lootable
     public static int[] david = new int[]{2, 400, 100, 300};
     // attack,hp,mana,gold lootable
@@ -54,7 +54,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             david[1] = david[1] - player[0];
-                            System.out.println("David " + "Attack : " + david[0] + " HP : " + david[1]);
+                            System.out.println("David " + "Attack : " + david[0] + ", HP : " + david[1]);
 
                             break;
                         case 2:
@@ -165,7 +165,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             luca[1] = luca[1] - player[0];
-                            System.out.println("Luca " + "Attack : " + luca[0] + " HP : " + luca[1]);
+                            System.out.println("Luca " + "Attack : " + luca[0] + ", HP : " + luca[1]);
 
                             break;
                         case 2:
@@ -275,7 +275,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             bartosz[1] = bartosz[1] - player[0];
-                            System.out.println("Bartosz " + "Attack : " + bartosz[0] + " HP : " + bartosz[1]);
+                            System.out.println("Bartosz " + "Attack : " + bartosz[0] + ", HP : " + bartosz[1]);
 
                             break;
                         case 2:
@@ -386,7 +386,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             melvin[1] = melvin[1] - player[0];
-                            System.out.println("melvin " + "Attack : " + melvin[0] + " HP : " + melvin[1]);
+                            System.out.println("melvin " + "Attack : " + melvin[0] + ", HP : " + melvin[1]);
 
                             break;
                         case 2:
@@ -617,7 +617,7 @@ public class rpg {
                     if (player[3] - 21766 < 0) {
                         System.out.println("Too poor to buy it");
                     } else {
-                        player[0] = player[0] + 225;
+                        player[1] = player[1] + 225;
                     }
                     break;
                 case 14:
@@ -700,7 +700,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             Aizen[1] = Aizen[1] - player[0];
-                            System.out.println("Aizen " + "Attack : " + Aizen[0] + " HP : " + Aizen[1]);
+                            System.out.println("Aizen " + "Attack : " + Aizen[0] + ", HP : " + Aizen[1]);
 
                             break;
                         case 2:
@@ -810,7 +810,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             Ywatch[1] = Ywatch[1] - player[0];
-                            System.out.println("Ywatch " + "Attack : " + Ywatch[0] + " HP : " + Ywatch[1]);
+                            System.out.println("Ywatch " + "Attack : " + Ywatch[0] + ", HP : " + Ywatch[1]);
 
                             break;
                         case 2:
@@ -921,7 +921,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             Alexnight[1] = Alexnight[1] - player[0];
-                            System.out.println("Alexnight " + "Attack : " + Alexnight[0] + " HP : " + Alexnight[1]);
+                            System.out.println("Alexnight " + "Attack : " + Alexnight[0] + ", HP : " + Alexnight[1]);
 
                             break;
                         case 2:
@@ -1032,7 +1032,7 @@ public class rpg {
                     switch (output) {
                         case 1:
                             Noxx[1] = Noxx[1] - player[0];
-                            System.out.println("Noxx " + "Attack : " + Noxx[0] + " HP : " + Noxx[1]);
+                            System.out.println("Noxx " + "Attack : " + Noxx[0] + ", HP : " + Noxx[1]);
 
                             break;
                         case 2:
