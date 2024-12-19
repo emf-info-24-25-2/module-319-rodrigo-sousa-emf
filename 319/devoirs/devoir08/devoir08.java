@@ -8,7 +8,7 @@ public class devoir08 {
     private static final int TAILLE_MOT_DE_PASSE = 15;
 
     private static String genereMotDePasse(int tailleMotDePasse) {
-       
+        
         String resultat = "";
 
         Random random = new Random();

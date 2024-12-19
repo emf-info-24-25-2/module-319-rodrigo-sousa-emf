@@ -1,7 +1,7 @@
 package devoirs.devoir09;
 
 import java.util.Arrays;
-
+ 
 public class devoir09 {
 
     public final static int NBRE_CHIFFRES = 6;
@@ -13,7 +13,7 @@ public class devoir09 {
         if (max - min + 1 < NBR_tirage) {
             throw new IllegalArgumentException("La plage des valeurs est trop petite pour générer " +
                     NBR_tirage + " valeurs uniques.");
-        }
+        } 
 
         int[] tab = new int[NBR_tirage];
         int index = 0;
